@@ -15,7 +15,27 @@ namespace Pessoas.Classes
 
         public bool validarDataNascimento(DateTime dataNasc)
         {
-            throw new NotImplementedException();
+            DateTime dataAtual = DateTime.Today;
+            double idade = (dataAtual - dataNasc).TotalDays / 365.25;
+            if (idade >= 18)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool ValidarDataNascimento(String dataNasc)
+        {
+            DateTime dataConvertida;
+            if (DateTime.TryParse(dataNasc, out dataConvertida))
+            {
+                DateTime dataAtual = DateTime.Today;
+                double idade = (dataAtual - dataConvertida).TotalDays / 365.25;
+                if (idade >= 18)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
