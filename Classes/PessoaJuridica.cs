@@ -7,6 +7,23 @@ namespace Pessoas.Classes
     {
         public string ?cnpj{get;set;}
 
+        public PessoaJuridica()
+        {
+
+        }
+
+        public PessoaJuridica(string NomePesJur, string CadPesJur)
+        {
+            this.nome = NomePesJur;
+            this.cnpj = CadPesJur;
+        }
+        public PessoaJuridica(string NomePesJur, string CadPesJur, float faturamento)
+        {
+            this.nome = NomePesJur;
+            this.cnpj = CadPesJur;
+            this.rendimento = faturamento;
+        }
+
         public override float pagarImposto()
         {
             if(rendimento <= 5000)

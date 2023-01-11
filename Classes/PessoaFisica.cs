@@ -13,22 +13,26 @@ namespace Pessoas.Classes
 
         }
 
-        public PessoaFisica(string CadPesFis)
+        public PessoaFisica(string NomePesFis, string CadPesFis)
         {
+            this.nome = NomePesFis;
             this.cpf = CadPesFis;
         }
-        public PessoaFisica(string CadPesFis, DateTime dataNasc)
+        public PessoaFisica(string NomePesFis, string CadPesFis, DateTime dataNasc)
         {
+            this.nome = NomePesFis;
             this.cpf = CadPesFis;
             this.dataNascimento = dataNasc;
         }
-        public PessoaFisica(string CadPesFis, float salario)
+        public PessoaFisica(string NomePesFis, string CadPesFis, float salario)
         {
+            this.nome = NomePesFis;
             this.cpf = CadPesFis;
             this.rendimento = salario;
         }
-        public PessoaFisica(string CadPesFis, DateTime dataNasc, float salario)
+        public PessoaFisica(string NomePesFis, string CadPesFis, DateTime dataNasc, float salario)
         {
+            this.nome = NomePesFis;
             this.cpf = CadPesFis;
             this.dataNascimento = dataNasc;
             this.rendimento = salario;
