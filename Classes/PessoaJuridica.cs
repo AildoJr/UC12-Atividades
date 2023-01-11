@@ -7,9 +7,30 @@ namespace Pessoas.Classes
     {
         public string ?cnpj{get;set;}
 
-        public override float pagarImposto(float rendimento)
+        public override float pagarImposto()
         {
-            return rendimento;
+            if(rendimento <= 5000)
+            {
+                return (rendimento * 0.06f);
+            }
+            if(rendimento <= 10000) //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+            {
+                return (rendimento * 0.08f);
+            }
+            return rendimento * 0.10f; //  Não é necessário o else, pois caso alguma das condições anteriores sejam verdadeiras, a execução desse trecho de código será interrompida pelo return
+        }
+
+        public override float pagarImposto(float faturamento)
+        {
+            if(faturamento <= 5000)
+            {
+                return (faturamento * 0.06f);
+            }
+            if(faturamento <= 10000) //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+            {
+                return (faturamento * 0.08f);
+            }
+            return faturamento * 0.10f; //  Não é necessário o else, pois caso alguma das condições anteriores sejam verdadeiras, a execução desse trecho de código será interrompida pelo return
         }
         public bool validarCNPJ(string cnpj)
         {
@@ -20,27 +41,20 @@ namespace Pessoas.Classes
 
             if (Regex.IsMatch(cnpj, @"^(\d{2}[\.]\d{3}[\.]\d{3}[/]\d{4}[-]\d{2})$")) // Utilizando a função Regex para verificar se o CNPJ segue o primeiro padrão
             {
-                if (cnpj.Length == 18) // Verificando se tem o número correto de dígitos, nesse caso, 18.
-                {
-                    if (cnpj.Substring(11, 4) == "0001") // Verificando se a sequência 0001 está presente
-                    { 
-                        Console.WriteLine("CNPJ válido!");
-                        return true;
-                    }
+                if (cnpj.Substring(11, 4) == "0001") // Verificando se a sequência 0001 está presente
+                { 
+                    Console.WriteLine("CNPJ válido!");
+                    return true;
                 }
-            }
-            else // Se não seguir o formato 1, pode estar apenas com números: formato 2
+            }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
+            if(Regex.IsMatch(cnpj,@"^([0-9]{14})$")) // [0-9] tem o mesmo efeito de \d
             {
-                if(Regex.IsMatch(cnpj,@"^([0-9]{14})$")) // [0-9] tem o mesmo efeito de \d
-                {
-                    if (cnpj.Substring(8, 4) == "0001") // Verificando se a sequência 0001 está presente
-                    { 
-                        Console.WriteLine("CNPJ válido!");
-                        return true;
-                    }
+                if (cnpj.Substring(8, 4) == "0001") // Verificando se a sequência 0001 está presente
+                { 
+                    Console.WriteLine("CNPJ válido!");
+                    return true;
                 }
-                
-            }
+            }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
             Console.WriteLine("CNPJ inválido!");
             return false;
         }

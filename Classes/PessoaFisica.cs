@@ -8,9 +8,56 @@ namespace Pessoas.Classes
 
         public DateTime ?dataNascimento{get;set;}
 
-        public override float pagarImposto(float rendimento)
+        public PessoaFisica()
         {
-            return rendimento;
+
+        }
+
+        public PessoaFisica(string CadPesFis)
+        {
+            this.cpf = CadPesFis;
+        }
+        public PessoaFisica(string CadPesFis, DateTime dataNasc)
+        {
+            this.cpf = CadPesFis;
+            this.dataNascimento = dataNasc;
+        }
+        public PessoaFisica(string CadPesFis, float salario)
+        {
+            this.cpf = CadPesFis;
+            this.rendimento = salario;
+        }
+        public PessoaFisica(string CadPesFis, DateTime dataNasc, float salario)
+        {
+            this.cpf = CadPesFis;
+            this.dataNascimento = dataNasc;
+            this.rendimento = salario;
+        }
+
+        public override float pagarImposto()
+        {
+            if(rendimento <= 1500)
+            {
+                return 0;
+            }
+            if(rendimento <= 5000)//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+            {
+                return (rendimento * 0.03f);
+            }
+            return rendimento * 0.05f;//  Não é necessário o else, pois caso alguma das condições anteriores sejam verdadeiras, a execução desse trecho de código será interrompida pelo return
+        }
+
+        public override float pagarImposto(float salario)
+        {
+            if(salario <= 1500)
+            {
+                return 0;
+            }
+            if(salario <= 5000) //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+            {
+                return (salario * 0.03f);
+            }
+            return salario * 0.05f; //  Não é necessário o else, pois caso alguma das condições anteriores sejam verdadeiras, a execução desse trecho de código será interrompida pelo return
         }
 
         public bool validarDataNascimento(DateTime dataNasc)
@@ -21,7 +68,7 @@ namespace Pessoas.Classes
             {
                 return true;
             }
-            return false;
+            return false; //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
         }
         public bool ValidarDataNascimento(String dataNasc)
         {
@@ -34,8 +81,8 @@ namespace Pessoas.Classes
                 {
                     return true;
                 }
-            }
-            return false;
+            } 
+            return false; //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
         }
     }
 }

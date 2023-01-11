@@ -6,9 +6,11 @@ namespace Pessoas.Classes
     {
         public string ?nome{get; set;}
 
-        public string ?endereço{get;set;}
+        public Endereco ?endereço{get;set;}
 
         public float rendimento{get;set;}
+
+        public abstract float pagarImposto();
 
         public abstract float pagarImposto(float rendimento);
     }
