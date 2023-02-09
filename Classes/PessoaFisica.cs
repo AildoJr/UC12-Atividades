@@ -64,6 +64,19 @@ namespace Pessoas.Classes
             return salario * 0.05f; //  Não é necessário o else, pois caso alguma das condições anteriores sejam verdadeiras, a execução desse trecho de código será interrompida pelo return
         }
 
+        public bool validarDataNascimento()
+        {
+            if( this.dataNascimento.HasValue == true) //Verifica se não é nulo
+            {
+                DateTime dataAtual = DateTime.Today;
+                double idade = (dataAtual - this.dataNascimento.Value).TotalDays / 365.25;
+                if (idade >= 18)
+                {
+                    return true;
+                }
+            }
+            return false; //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+        }
         public bool validarDataNascimento(DateTime dataNasc)
         {
             DateTime dataAtual = DateTime.Today;
@@ -74,7 +87,7 @@ namespace Pessoas.Classes
             }
             return false; //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
         }
-        public bool ValidarDataNascimento(String dataNasc)
+        public bool validarDataNascimento(String dataNasc)
         {
             DateTime dataConvertida;
             if (DateTime.TryParse(dataNasc, out dataConvertida))
