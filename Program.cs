@@ -13,6 +13,11 @@ Console.WriteLine(@$"
 =============================================");
 
 Thread.Sleep(800);
+
+//Console.BackgroundColor = ConsoleColor.Green;//cor de fundo
+//Console.ForegroundColor = ConsoleColor.DarkBlue;//cor da fonte
+
+
 Console.Write($"Iniciando");
 for(int i=0; i<5;i++)
 {
@@ -20,6 +25,7 @@ for(int i=0; i<5;i++)
     Console.Write(".");
 }
 
+//Console.ResetColor();
 
 Console.WriteLine(@$"
 =============================================
@@ -30,29 +36,35 @@ Console.WriteLine(@$"
 |                                           |
 |       0 - Sair                            |
 =============================================");
-Console.Write("-> ");
-string opcao = Console.ReadLine();
+string ? opcao;
+do{
+    Console.Write("-> ");
+    opcao = Console.ReadLine();//Console.ReadLine();
 
-switch(opcao)
-{
-    case "1": Console.WriteLine($"Pessoa Física");
-              Console.WriteLine($"Pressione qualquer tecla para continuar");
-              Console.ReadKey();
-              break;
-    case "2": Console.WriteLine($"Pessoa Juridica");
-              Console.WriteLine($"Pressione qualquer tecla para continuar");
-              Console.ReadKey();
-              break;
-    case "0": Console.WriteLine($"Saindo");
-              Console.WriteLine($"Pressione qualquer tecla para continuar");
-              Console.ReadKey();
-              break;
-    default:  Console.WriteLine($"Opção Inválida!");
-              Console.WriteLine($"Pressione qualquer tecla para continuar");
-              Console.ReadKey();
-              break;
-}
+    switch(opcao)
+    {
+        case "1":   Console.WriteLine($"Pessoa Física");
+                    Console.WriteLine($"Pressione qualquer tecla para continuar");
+                    Console.ReadKey();
+                    break;
 
+        case "2":   Console.WriteLine($"Pessoa Juridica");
+                    Console.WriteLine($"Pressione qualquer tecla para continuar");
+                    Console.ReadKey();
+                    break;
+
+        case "0":   Console.WriteLine($"Saindo");
+                    Console.WriteLine($"Pressione qualquer tecla para continuar");
+                    Console.ReadKey();
+                    break;
+
+        default:    Console.WriteLine($"Opção Inválida! Tente novamente!");
+                    Console.WriteLine();
+                    break;
+    }
+}while(/*(opcao != "1")&&(opcao != "2")&&*/(opcao != "0"));
+
+Console.Clear();
 //***** CADASTRO PESSOA FÍSICA 1 *****
 
 Endereco endpf1 = new Endereco();

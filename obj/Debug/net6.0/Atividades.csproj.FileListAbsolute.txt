@@ -13,3 +13,18 @@ C:\Users\afsjr\Documents\Senai Programador Full-Stack\UC12\SA2\Atividades\obj\De
 C:\Users\afsjr\Documents\Senai Programador Full-Stack\UC12\SA2\Atividades\obj\Debug\net6.0\Atividades.pdb
 C:\Users\afsjr\Documents\Senai Programador Full-Stack\UC12\SA2\Atividades\obj\Debug\net6.0\Atividades.genruntimeconfig.cache
 C:\Users\afsjr\Documents\Senai Programador Full-Stack\UC12\SA2\Atividades\obj\Debug\net6.0\ref\Atividades.dll
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\bin\Debug\net6.0\Atividades.exe
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\bin\Debug\net6.0\Atividades.deps.json
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\bin\Debug\net6.0\Atividades.runtimeconfig.json
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\bin\Debug\net6.0\Atividades.dll
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\bin\Debug\net6.0\Atividades.pdb
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.csproj.AssemblyReference.cache
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.AssemblyInfoInputs.cache
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.AssemblyInfo.cs
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.csproj.CoreCompileInputs.cache
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.dll
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\refint\Atividades.dll
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.pdb
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\Atividades.genruntimeconfig.cache
+C:\Users\aildo\Documents\Senai Programador Full-Stack\UC12 - Backend\obj\Debug\net6.0\ref\Atividades.dll
