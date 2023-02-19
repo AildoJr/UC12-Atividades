@@ -8,24 +8,34 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aildo\\.nuget\\packages\\": {}
+    "C:\\Users\\afsjr\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\UC12 - Backend\\Atividades.csproj",
+      "projectUniqueName": "C:\\Users\\afsjr\\Documents\\Senai Programador Full-Stack\\UC12\\SA2\\Atividades\\Atividades.csproj",
       "projectName": "Atividades",
-      "projectPath": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\UC12 - Backend\\Atividades.csproj",
-      "packagesPath": "C:\\Users\\aildo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\UC12 - Backend\\obj\\",
+      "projectPath": "C:\\Users\\afsjr\\Documents\\Senai Programador Full-Stack\\UC12\\SA2\\Atividades\\Atividades.csproj",
+      "packagesPath": "C:\\Users\\afsjr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\afsjr\\Documents\\Senai Programador Full-Stack\\UC12\\SA2\\Atividades\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\aildo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\afsjr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -54,30 +64,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.13, 6.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
