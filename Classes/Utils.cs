@@ -22,5 +22,15 @@ namespace Pessoas.Classes
 
             Console.ResetColor();
         }
+        public static void ParadaNoConsole(string texto, ConsoleColor corFonte = ConsoleColor.White)
+        {
+            Console.ForegroundColor = corFonte;
+            Console.WriteLine();
+            Console.WriteLine(texto);
+            Console.WriteLine();
+            Console.WriteLine($"Pressione qualquer tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }

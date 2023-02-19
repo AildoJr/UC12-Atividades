@@ -66,11 +66,8 @@ do
             Console.WriteLine($"Endereço: {pf1.endereço.logradouro}, {pf1.endereço.numero} - Comercial: {pf1.endereço.comercial} ");
             Console.WriteLine("Salário: R$ " + pf1.rendimento);
             Console.WriteLine($"O imposto que {pf1.nome} deve pagar é R$ {pf1.pagarImposto()}");
-            Console.WriteLine();
-
-            Console.WriteLine($"Pressione qualquer tecla para continuar");
-            Console.ReadKey();
-            Console.Clear();
+            
+            Utils.ParadaNoConsole("Pessoa Física cadastrada com sucesso!");
             break;
 
         case "2":
@@ -97,25 +94,16 @@ do
             pj1.rendimento = 50000.00f;
             Console.WriteLine($"Receita: R$ {pj1.rendimento}");
             Console.WriteLine($"O imposto que {pj1.nome} deve pagar é R$ {pj1.pagarImposto(50000)}");
-            Console.WriteLine();
 
-            Console.WriteLine($"Pressione qualquer tecla para continuar");
-            Console.ReadKey();
-            Console.Clear();
+            Utils.ParadaNoConsole("Pessoa jurídica cadastrada com sucessso!");
             break;
 
         case "0":
-            Console.WriteLine($"Obrigado por utilizar nosso programa!");
-            Console.WriteLine($"Pressione qualquer tecla para continuar");
-            Console.ReadKey();
-            // Console.Clear();
+            Utils.ParadaNoConsole("Obrigado por utilizar nosso programa!");
             break;
 
         default:
-            Console.WriteLine($"Opção Inválida! Tente novamente! "); //\n\n1 - Pessoa Físicas \n2 - Pessoa Jurídica    \n0 - Sair 
-            Console.WriteLine();
-            Console.ReadKey();
-            Console.Clear();
+            Utils.ParadaNoConsole("Opção Inválida! Tente novamente! "); //\n\n1 - Pessoa Físicas \n2 - Pessoa Jurídica    \n0 - Sair 
             break;
     }
 } while (opcao != "0");
