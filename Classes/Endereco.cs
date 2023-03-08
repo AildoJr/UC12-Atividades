@@ -9,6 +9,6 @@ namespace Pessoas.Classes
     {
         public string? logradouro { get; set; }
         public int numero { get; set; }
-        public bool comercial { get; set; }
+        public bool? comercial { get; set; }
     }
 }
