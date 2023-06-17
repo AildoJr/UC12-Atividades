@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZcmmYMAvEq97mqnNY7xevt5t2EeHvO9tj5YqWmyU8cbXc/Lm/ZoJFCXY86UBes3gFcBi04JQZnDm5bOzXAvr7w==",
+  "dgSpecHash": "sYNiyG0+6fvYNxwqB1b+bpDgPxShuVlvdkLMgP6+z7Z74f4I0Uoc61zlBM69zBlvTrJSFrvil+Ckv2u89F8BDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\afsjr\\Documents\\Senai Programador Full-Stack\\UC12\\SA2\\Atividades\\Atividades.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\UC12-Atividades linkado Git\\UC12-Atividades\\Atividades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\aildo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\aildo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\aildo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\aildo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

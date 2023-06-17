@@ -63,27 +63,32 @@ do
 
                         Console.Write("Digite o nome: ");
                         pf1.nome = Console.ReadLine();
-                        Console.Write("Digite o CPF: ");
-                        pf1.cpf = Console.ReadLine();
+                        do{
+                            Console.WriteLine("");
+                            Console.WriteLine("Digite o CPF: ");
+                            Console.WriteLine(@"(Formatos válidos: 123.456.789-01 e 12345678901)");
+                            Console.Write("-> ");
+                            pf1.cpf = Console.ReadLine();
+                        }while(pf1.validarCPF(pf1.cpf)==false);
+                        //CPF válido em formato 1:     123.456.789-01
+                        //CPF válido em formato 2:     12345678901
+                        // Console.Write("Digite o CPF: ");
+                        // pf1.cpf = Console.ReadLine();
                         pf1.dataNascimento = new DateTime(1981, 01, 10);
-                        Console.WriteLine(pf1.dataNascimento);
-                        //string datanasc = String.Parse(pf1.dataNascimento);
-                        //string datanasc = DateTime.Parse(pf1.dataNascimento).ToString("dd-MM-yyyy HH:mm:ss");
-                        string datanasc = $"{(1981,01, 10):yyyy-MM-dd}";
-                        //DateTime.TryParse("30/01/2015", out var data)) dataFormatada = data.ToString("dd/MM/yyyy");
-                        //string datanasc = $"{pf1.dataNascimento:yyyy-MM-dd}";
-                        Console.WriteLine(datanasc);
-                        /*do{
-                            Console.Write(@"Digite a data de nascimento (MM-dd-aaa): ");
+
+                        //TESTE DE DATA
+                        var testedata = true;
+                        DateTime dataprovisoria = new DateTime();
+                        do{
+                            Console.Write("Digite a Data de nascimento: (dd/mm/aaaa): ");
+                            //Formatos Aceitos: (dd-mm-aaaa), (dd/mm/aaaa)
                             string datanasc = Console.ReadLine();
-                            if(pf1.validarDataNascimento(datanasc)==true)
-                            {
-                                string datanasc = pf1.dataNascimento.ToString("dd-MM-yyyy HH:mm:ss");
-                            }
-                            //pf1.dataNascimento = DateTime.Parse(datanasc);//Parse(datanasc);
-                            //pf1.dataNascimento = new DateTime(1981, 01, 10);
-                            
-                        }while(pf1.validarDataNascimento(pf1.dataNascimento.Value)==false);*/
+                            testedata = DateTime.TryParse(datanasc, out dataprovisoria);
+                            if(testedata==false)
+                                Console.WriteLine("Data Inválida! Tente Novamente!");
+                        }while(testedata!=true);
+                        pf1.dataNascimento = dataprovisoria;
+
                         Console.Write("Digite o rendimento bruto: ");
                         pf1.rendimento = float.Parse(Console.ReadLine());
 
@@ -199,12 +204,12 @@ do
                         do{
                             Console.WriteLine("");
                             Console.WriteLine("Digite o CNPJ: ");
-                            Console.WriteLine(@"(Formatos válidos: 12.345.678/0001-23 e 12345678000123)");
+                            Console.WriteLine(@"(Formatos válidos: 12.345.678/0001-23 e 12345670000123)");
                             Console.Write("-> ");
                             pj1.cnpj = Console.ReadLine();
                         }while(pj1.validarCNPJ(pj1.cnpj)==false);
                         //CNPJ válido em formato 1:     12.345.678/0001-23
-                        //CNPJ válido em formato 2:     12345678000123
+                        //CNPJ válido em formato 2:     12345670000123
 
                         
                         Endereco endpj1 = new Endereco();

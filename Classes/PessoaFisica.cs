@@ -1,4 +1,5 @@
 using Pessoas.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace Pessoas.Classes
 {
@@ -100,6 +101,26 @@ namespace Pessoas.Classes
                 }
             } 
             return false; //  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo return
+        }
+        public bool validarCPF(string cpf)
+        {
+            // Consideramos duas formas de se escrever um CPF:
+            // 1 - Completo, com números, pontos, barra e traço: 123.456.789-01       14 dígitos
+            // 2 - Apenas números: 12345678901           11 dígitos
+
+            if (Regex.IsMatch(cpf, @"^(\d{3}[\.]\d{3}[\.]\d{3}[-]\d{2})$")) // Utilizando a função Regex para verificar se o CPF segue o primeiro padrão
+            {
+                Console.WriteLine("CPF válido!");
+                return true;
+            }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
+            if(Regex.IsMatch(cpf,@"^([0-9]{11})$")) // [0-9] tem o mesmo efeito de \d
+            {
+                Console.WriteLine("CPF válido!");
+                Console.WriteLine();
+                return true;
+            }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
+            Console.WriteLine("CPF inválido!");
+            return false;
         }
     }
 }
