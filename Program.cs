@@ -66,12 +66,19 @@ do
                         Console.Write("Digite o CPF: ");
                         pf1.cpf = Console.ReadLine();
                         pf1.dataNascimento = new DateTime(1981, 01, 10);
+                        Console.WriteLine(pf1.dataNascimento);
+                        //string datanasc = String.Parse(pf1.dataNascimento);
+                        //string datanasc = DateTime.Parse(pf1.dataNascimento).ToString("dd-MM-yyyy HH:mm:ss");
+                        string datanasc = $"{(1981,01, 10):yyyy-MM-dd}";
+                        //DateTime.TryParse("30/01/2015", out var data)) dataFormatada = data.ToString("dd/MM/yyyy");
+                        //string datanasc = $"{pf1.dataNascimento:yyyy-MM-dd}";
+                        Console.WriteLine(datanasc);
                         /*do{
                             Console.Write(@"Digite a data de nascimento (MM-dd-aaa): ");
                             string datanasc = Console.ReadLine();
                             if(pf1.validarDataNascimento(datanasc)==true)
                             {
-                                pf1.dataNascimento = DateTime.Parse(datanasc);
+                                string datanasc = pf1.dataNascimento.ToString("dd-MM-yyyy HH:mm:ss");
                             }
                             //pf1.dataNascimento = DateTime.Parse(datanasc);//Parse(datanasc);
                             //pf1.dataNascimento = new DateTime(1981, 01, 10);
@@ -192,12 +199,12 @@ do
                         do{
                             Console.WriteLine("");
                             Console.WriteLine("Digite o CNPJ: ");
-                            Console.WriteLine(@"(Formatos válidos: 12.345.678/0001-23 e 12345670000123)");
+                            Console.WriteLine(@"(Formatos válidos: 12.345.678/0001-23 e 12345678000123)");
                             Console.Write("-> ");
                             pj1.cnpj = Console.ReadLine();
                         }while(pj1.validarCNPJ(pj1.cnpj)==false);
                         //CNPJ válido em formato 1:     12.345.678/0001-23
-                        //CNPJ válido em formato 2:     12345670000123
+                        //CNPJ válido em formato 2:     12345678000123
 
                         
                         Endereco endpj1 = new Endereco();
