@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sYNiyG0+6fvYNxwqB1b+bpDgPxShuVlvdkLMgP6+z7Z74f4I0Uoc61zlBM69zBlvTrJSFrvil+Ckv2u89F8BDQ==",
+  "dgSpecHash": "ABCDfuZy7ZAZ07F73S816LNEigYjspOLbWDsEOiHsBofeNmQkXABxAR6+npsqN/YHEbQyOOYTLHcr8YJXx8xDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\UC12-Atividades linkado Git\\UC12-Atividades\\Atividades.csproj",
+  "projectFilePath": "C:\\Users\\aildo\\Documents\\Senai Programador Full-Stack\\Senai PFS\\UC12-SA2\\UC12-Atividades\\Atividades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aildo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\aildo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",

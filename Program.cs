@@ -86,6 +86,12 @@ do
                             testedata = DateTime.TryParse(datanasc, out dataprovisoria);
                             if(testedata==false)
                                 Console.WriteLine("Data Inválida! Tente Novamente!");
+                            else
+                                if(!(pf1.validarDataNascimento(dataprovisoria)))
+                                {
+                                    Console.WriteLine("É necessário ter atingido a maioridade! Tente Novamente!");
+                                    testedata=false;
+                                }
                         }while(testedata!=true);
                         pf1.dataNascimento = dataprovisoria;
 
