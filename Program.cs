@@ -66,18 +66,21 @@ do
                         do{
                             Console.WriteLine("");
                             Console.WriteLine("Digite o CPF: ");
-                            Console.WriteLine(@"(Formatos válidos: 123.456.789-01 e 12345678901)");
+                            Console.WriteLine(@"(Formatos válidos: 123.456.789-01, 12345678901 e 123456789-01)");
                             Console.Write("-> ");
                             pf1.cpf = Console.ReadLine();
                         }while(pf1.validarCPF(pf1.cpf)==false);
                         //CPF válido em formato 1:     123.456.789-01
                         //CPF válido em formato 2:     12345678901
+                        //CPF válido em formato 3:     123456789-01
+                        //
                         // Console.Write("Digite o CPF: ");
                         // pf1.cpf = Console.ReadLine();
                         pf1.dataNascimento = new DateTime(1981, 01, 10);
 
                         //TESTE DE DATA
                         var testedata = true;
+                        var maioridade = true;
                         DateTime dataprovisoria = new DateTime();
                         do{
                             Console.Write("Digite a Data de nascimento: (dd/mm/aaaa): ");
@@ -89,48 +92,53 @@ do
                             else
                                 if(!(pf1.validarDataNascimento(dataprovisoria)))
                                 {
-                                    Console.WriteLine("É necessário ter atingido a maioridade! Tente Novamente!");
-                                    testedata=false;
+                                    testedata = true;
+                                    maioridade = false;
+                                    Utils.ParadaNoConsole("É necessário ter atingido a maioridade para ser cadastrado(a) no sistema!");
                                 }
                         }while(testedata!=true);
-                        pf1.dataNascimento = dataprovisoria;
+                        if(maioridade==true)
+                        {
 
-                        Console.Write("Digite o rendimento bruto: ");
-                        pf1.rendimento = float.Parse(Console.ReadLine());
+                            pf1.dataNascimento = dataprovisoria;
 
-                        Endereco endpf1 = new Endereco();
-                        Console.Write("Digite o endereço: ");
-                        endpf1.logradouro = Console.ReadLine();
-                        Console.Write("Digite o número: ");
-                        endpf1.numero = int.Parse(Console.ReadLine());
+                            Console.Write("Digite o rendimento bruto: ");
+                            pf1.rendimento = float.Parse(Console.ReadLine());
 
-                        string leituraEnd;
-                        
-                        // Se endpf1.comercial não puder assumir valor nulo, então assumirá o valor de Falso por padrão e o teste abaixo não funcionará
-                        do{
-                            Console.Write($"O endereço é comercial? (S/N): ");
-                            leituraEnd = Console.ReadLine();
-                            //Console.WriteLine(leituraEnd);
-                            if(leituraEnd.ToUpper()=="S"){
-                                endpf1.comercial = true;
-                            }else{
-                                if(leituraEnd.ToUpper()=="N"){
-                                    endpf1.comercial = false;
+                            Endereco endpf1 = new Endereco();
+                            Console.Write("Digite o endereço: ");
+                            endpf1.logradouro = Console.ReadLine();
+                            Console.Write("Digite o número: ");
+                            endpf1.numero = int.Parse(Console.ReadLine());
+
+                            string leituraEnd;
+                            
+                            // Se endpf1.comercial não puder assumir valor nulo, então assumirá o valor de Falso por padrão e o teste abaixo não funcionará
+                            do{
+                                Console.Write($"O endereço é comercial? (S/N): ");
+                                leituraEnd = Console.ReadLine();
+                                //Console.WriteLine(leituraEnd);
+                                if(leituraEnd.ToUpper()=="S"){
+                                    endpf1.comercial = true;
+                                }else{
+                                    if(leituraEnd.ToUpper()=="N"){
+                                        endpf1.comercial = false;
+                                    }
+                                    else{
+                                        Console.WriteLine("Inválido,favor digitar novamente!");
+                                        //Console.WriteLine(endpf1.comercial);
+                                        
+                                    }
                                 }
-                                else{
-                                    Console.WriteLine("Inválido,favor digitar novamente!");
-                                    //Console.WriteLine(endpf1.comercial);
-                                    
-                                }
-                            }
-                        }while((endpf1.comercial != true) && (endpf1.comercial != false));
+                            }while((endpf1.comercial != true) && (endpf1.comercial != false));
 
 
-                        pf1.endereço = endpf1;
+                            pf1.endereço = endpf1;
 
-                        listaPf.Add(pf1);
+                            listaPf.Add(pf1);
 
-                        Utils.ParadaNoConsole("Pessoa Física cadastrada com sucesso!");
+                            Utils.ParadaNoConsole("Pessoa Física cadastrada com sucesso!");
+                        }
                         Console.Clear();
                         break;
                     case "2":
@@ -152,13 +160,13 @@ do
                             }
 
                             Console.Write($"Endereço: {pessoaf.endereço.logradouro}, {pessoaf.endereço.numero} - Comercial: ");
-                            //Console.WriteLine(pessoaf.endereço.comercial?"Sim":"Não");
-                            if(pessoaf.endereço.comercial == true){
+                            Console.WriteLine((pessoaf.endereço.comercial == true)?"Sim":"Não");
+                            /*if(pessoaf.endereço.comercial == true){
                                 Console.WriteLine("Sim");
                             }
                             else{
                                 Console.WriteLine("Não");
-                            }
+                            }*/
                             
                             Console.WriteLine("Salário: R$ " + pessoaf.rendimento);
                             Console.WriteLine($"O imposto que {pessoaf.nome} deve pagar é R$ {pessoaf.pagarImposto()}");

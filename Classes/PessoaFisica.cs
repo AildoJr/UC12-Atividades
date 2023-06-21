@@ -71,6 +71,7 @@ namespace Pessoas.Classes
             {
                 DateTime dataAtual = DateTime.Today;
                 double idade = (dataAtual - this.dataNascimento.Value).TotalDays / 365.25;
+                
                 if (idade >= 18)
                 {
                     return true;
@@ -82,7 +83,9 @@ namespace Pessoas.Classes
         {
             DateTime dataAtual = DateTime.Today;
             double idade = (dataAtual - dataNasc).TotalDays / 365.25;
-            if (idade >= 18)
+            // Console.WriteLine("Idade aproximada: ");
+            // Console.WriteLine(idade);
+            if (idade >= 17.998) //Caso a pessoa esteja completando 18 anos no dia corrente
             {
                 return true;
             }
@@ -104,21 +107,28 @@ namespace Pessoas.Classes
         }
         public bool validarCPF(string cpf)
         {
-            // Consideramos duas formas de se escrever um CPF:
-            // 1 - Completo, com números, pontos, barra e traço: 123.456.789-01       14 dígitos
+            // Consideramos três formas de se escrever um CPF:
+            // 1 - Completo, com números, pontos e traço: 123.456.789-01       14 dígitos
             // 2 - Apenas números: 12345678901           11 dígitos
+            // 3 - Com números e traço          12 dígitos
 
             if (Regex.IsMatch(cpf, @"^(\d{3}[\.]\d{3}[\.]\d{3}[-]\d{2})$")) // Utilizando a função Regex para verificar se o CPF segue o primeiro padrão
             {
-                Console.WriteLine("CPF válido!");
+                // Console.WriteLine("CPF válido!");
                 return true;
             }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
             if(Regex.IsMatch(cpf,@"^([0-9]{11})$")) // [0-9] tem o mesmo efeito de \d
             {
-                Console.WriteLine("CPF válido!");
+                // Console.WriteLine("CPF válido!");
                 Console.WriteLine();
                 return true;
             }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
+            if (Regex.IsMatch(cpf, @"^(\d{9}[-]\d{2})$")) // Utilizando a função Regex para verificar se o CPF segue o primeiro padrão
+            {
+                // Console.WriteLine("CPF válido!");
+                return true;
+            }//  Não é necessário o else, pois caso a condição anterior seja verdadeira, a execução desse trecho de código será interrompida pelo "return true"
+            
             Console.WriteLine("CPF inválido!");
             return false;
         }
