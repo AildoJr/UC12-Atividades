@@ -137,6 +137,12 @@ do
 
                             listaPf.Add(pf1);
 
+                            //ESCRITA EM ARQUIVO ER8
+
+                            StreamWriter sw = new StreamWriter($"{pf1.nome}.txt");
+                            sw.WriteLine(pf1.nome);
+                            sw.Close();
+
                             Utils.ParadaNoConsole("Pessoa Física cadastrada com sucesso!");
                         }
                         Console.Clear();
