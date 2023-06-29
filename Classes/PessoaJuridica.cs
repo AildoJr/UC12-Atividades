@@ -7,6 +7,10 @@ namespace Pessoas.Classes
     {
         public string ?cnpj{get;set;}
 
+        public string? razaoSocial { get; set;}
+
+        public string caminho {get; private set;} = "Database/PessoaJuridica.csv";
+
         public PessoaJuridica()
         {
 

@@ -139,9 +139,18 @@ do
 
                             //ESCRITA EM ARQUIVO ER8
 
+                            //Instanciando um objeto da classe StreamWriter de nome sw
                             StreamWriter sw = new StreamWriter($"{pf1.nome}.txt");
-                            sw.WriteLine(pf1.nome);
-                            sw.Close();
+                            sw.WriteLine(pf1.nome); //Escrevendo o nome no arquivo 
+                            sw.WriteLine(pf1.cpf); //Escrevendo o cpf no arquivo 
+                            sw.WriteLine(pf1.dataNascimento); //Escrevendo a data de nascimento no arquivo 
+                            sw.WriteLine($"{pf1.endereço.logradouro} {pf1.endereço.numero} {pf1.endereço.comercial}"); //Escrevendo o endereço no arquivo 
+                            sw.WriteLine(pf1.rendimento);
+                            sw.Close(); //É necessário fechar o arquivo após o uso
+                            /*using(StreamWriter sw = new StreamWriter($"{pf1.nome}.txt"))
+                            {
+                                sw.WriteLine(pf1.nome) // O using é uma forma de manter o arquivo aberto apenas durante o uso, não sendo necessário fechá-los manualmente após o uso
+                            }*/
 
                             Utils.ParadaNoConsole("Pessoa Física cadastrada com sucesso!");
                         }
@@ -275,7 +284,7 @@ do
 
                     case "2": //***** EXIBE DADOS DA PESSOA JURÍDICA 1 *****
 
-                        foreach (var pessoaj in listaPj)
+                        /*foreach (var pessoaj in listaPj)
                         {
                             
                             Console.WriteLine();
@@ -293,6 +302,18 @@ do
                             //pessoaj.rendimento = 50000.00f;
                             Console.WriteLine($"Receita: R$ {pessoaj.rendimento}");
                             Console.WriteLine($"O imposto que {pessoaj.nome} deve pagar é R$ {pessoaj.pagarImposto(pessoaj.rendimento)}");
+                        }*/
+
+                        using(StreamReader sr = new StreamReader("arquivo.txt"))
+                        {
+                            //Criando variável linha
+                            string linha; 
+
+                            while((linha = sr.ReadLine()) != null)
+                            {
+                                Console.WriteLine($"{linha}");
+                            }
+                            Utils.ParadaNoConsole("Leitura de arquivo finalizada!");
                         }
 
                         Utils.ParadaNoConsole("Fim da lista de pessoas jurídicas!");
